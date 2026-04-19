@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель — ВалерияLash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <div class="login-logo">
+                <i class="fas fa-eye"></i>
+                <h1>Валерия<span>Lash</span></h1>
+                <p>Админ-панель</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginPassword">Пароль</label>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPassword" placeholder="Введите пароль" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-sign-in-alt"></i> Войти
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="admin-panel" id="adminPanel" style="display:none;">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-eye"></i>
+                <span>Админ-панель</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-tab="dashboard">
+                    <i class="fas fa-tachometer-alt"></i> Обзор
+                </a>
+                <a href="#" class="nav-item" data-tab="services">
+                    <i class="fas fa-concierge-bell"></i> Услуги
+                </a>
+                <a href="#" class="nav-item" data-tab="works">
+                    <i class="fas fa-images"></i> Работы
+                </a>
+                <a href="#" class="nav-item" data-tab="reviews">
+                    <i class="fas fa-comments"></i> Отзывы
+                </a>
+                <a href="#" class="nav-item" data-tab="bookings">
+                    <i class="fas fa-calendar-alt"></i> Заявки
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/" class="nav-item" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Открыть сайт
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Выйти
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h2 id="pageTitle">Обзор</h2>
+                <div class="topbar-actions">
+                    <span class="admin-name"><i class="fas fa-user-shield"></i> Администратор</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="tab-content active" id="tab-dashboard">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background:#e8f5e9;color:#4caf50;">
+                                <i class="fas fa-concierge-bell"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="statServices">0</span>
+                                <span class="stat-label">Услуг</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background:#e3f2fd;color:#2196f3;">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="statWorks">0</span>
+                                <span class="stat-label">Работ</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background:#fff3e0;color:#ff9800;">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="statReviews">0</span>
+                                <span class="stat-label">Отзывов</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background:#fce4ec;color:#e91e63;">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="statBookings">0</span>
+                                <span class="stat-label">Заявок</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-user-circle"></i> Фото профиля (секция «Обо мне»)</h3>
+                        <div class="profile-photo-section">
+                            <div class="profile-photo-preview" id="profilePhotoPreview">
+                                <i class="fas fa-user-circle" style="font-size:3rem;color:#ccc"></i>
+                            </div>
+                            <div class="profile-photo-upload">
+                                <p style="font-size:0.85rem;color:#666;margin-bottom:10px">Загрузите фото для секции «Обо мне». Оно отобразится на фоне с лёгким блюром.</p>
+                                <label class="btn btn-primary btn-sm" style="cursor:pointer">
+                                    <i class="fas fa-upload"></i> Загрузить фото
+                                    <input type="file" id="profilePhotoInput" accept="image/*" style="display:none">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-bell"></i> Последние заявки</h3>
+                        <div id="recentBookings" class="recent-list"></div>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fas fa-clock"></i> Отзывы на модерации</h3>
+                        <div id="pendingReviews" class="recent-list"></div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-services">
+                    <div class="tab-header">
+                        <h3>Управление услугами</h3>
+                        <button class="btn btn-primary" id="addServiceBtn">
+                            <i class="fas fa-plus"></i> Добавить услугу
+                        </button>
+                    </div>
+                    <div id="servicesList" class="items-list"></div>
+                </div>
+
+                <div class="tab-content" id="tab-works">
+                    <div class="tab-header">
+                        <h3>Управление работами</h3>
+                        <button class="btn btn-primary" id="addWorkBtn">
+                            <i class="fas fa-plus"></i> Добавить работу
+                        </button>
+                    </div>
+                    <div id="worksList" class="items-grid"></div>
+                </div>
+
+                <div class="tab-content" id="tab-reviews">
+                    <div class="tab-header">
+                        <h3>Управление отзывами</h3>
+                    </div>
+                    <div class="tabs-filter">
+                        <button class="filter-btn active" data-filter="all">Все</button>
+                        <button class="filter-btn" data-filter="pending">На модерации</button>
+                        <button class="filter-btn" data-filter="approved">Одобренные</button>
+                    </div>
+                    <div id="reviewsAdminList" class="items-list"></div>
+                </div>
+
+                <div class="tab-content" id="tab-bookings">
+                    <div class="tab-header">
+                        <h3>Заявки на запись</h3>
+                    </div>
+                    <div id="bookingsList" class="items-list"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Заголовок</h3>
+                <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
