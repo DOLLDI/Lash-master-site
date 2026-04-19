@@ -78,11 +78,6 @@
 - Телефон: +996 558 345 484
 - Instagram: [@lera_lash.bishkek](https://www.instagram.com/lera_lash.bishkek)
 
----
-
-## 📝 Лицензия
-
-MIT License
 
 ---
 
