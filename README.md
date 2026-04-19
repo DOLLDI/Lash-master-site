@@ -1,6 +1,6 @@
 # Lash Master — Сайт-визитка для мастера по наращиванию ресниц
 
-![Логотип](screenshotssite/logo.png)
+
 
 ## О проекте
 
@@ -10,15 +10,18 @@
 
 ## ✨ Демонстрация
 
-[![Видео-демонстрация](screenshotssite/demo_preview.png)](https://github.com/DOLLDI/Lash-master-site/assets/README_DEMO_VIDEO)
+**Видео-демонстрация:**
+
+[Смотреть видео (mp4, 10 МБ)](assets/README_DEMO_VIDEO.mp4)
 
 ---
 
 ## 📸 Скриншоты
 
-| Главная страница | Портфолио | Отзывы | Админ-панель |
-|------------------|-----------|--------|--------------|
-| ![](screenshotssite/main.png) | ![](screenshotssite/portfolio.png) | ![](screenshotssite/reviews.png) | ![](screenshotssite/admin.png) |
+
+| Главная | Портфолио | Отзывы | Админ |
+|---------|-----------|--------|-------|
+| ![](screenshotssite/Screenshot%202026-04-19%20185739.png) | ![](screenshotssite/Screenshot%202026-04-19%20185744.png) | ![](screenshotssite/Screenshot%202026-04-19%20185749.png) | ![](screenshotssite/Screenshot%202026-04-19%20185755.png) |
 
 ---
 
